@@ -4,8 +4,7 @@ IFS=$'\n\t'
 
 pm_zypper_install() {
     info "Installing dependencies."
-    zypper install -y curl git grep newt python3 python3-pip rsync sed > 
-/dev/null 2>&1 || fatal "Failed to install dependencies from zypper."
+    zypper install -y curl git grep newt python3 python3-pip rsync sed > /dev/null 2>&1 || fatal "Failed to install dependencies from zypper."
     # https://cryptography.io/en/latest/installation/#building-cryptography-on-linux
     info "Installing python dependencies."
     zypper install -y gcc libffi-devel python3-devel libopenssl-devel > /dev/null 2>&1 || fatal "Failed to install python cryptography dependencies from zypper."
