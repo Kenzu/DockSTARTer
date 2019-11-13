@@ -79,7 +79,7 @@ menu_value_prompt() {
             VALUEOPTIONS+=("Use System " "${SYSTEM_VAL}")
             ;;
         TZ)
-            SYSTEM_VAL=$(cat /etc/timezone)
+            SYSTEM_VAL=$(readlink /etc/localtime | awk -F'/usr/share/zoneinfo/' '{print $2}')
             VALUEOPTIONS+=("Use System " "${SYSTEM_VAL}")
             ;;
         *)
